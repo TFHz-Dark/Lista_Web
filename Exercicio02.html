@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    <p>Informe as suas notas</p>
+    <label for="nota_01">Nota 01:</label>
+    <input id="nota_01" name="nota_01" type="number"/>
+
+    <label for="nota_02">Nota 02:</label>
+    <input id="nota_02" name="nota_02" type="number"/>
+
+    <label for="nota_03">Nota 03:</label>
+    <input id="nota_03" name="nota_03" type="number"/>
+
+    <button onclick="rodar()">Calcular Media</button>
+    
+    <br>
+    <br>
+    <a href="Exercicio01.html"><button>Anterior</button></a>
+    <a href="Exercicio03.html"><button>Proximo</button></a>
+
+    <script>
+        function rodar(){
+            let nota_01=parseFloat(document.getElementById('nota_01').value);
+            let nota_02=parseFloat(document.getElementById('nota_02').value);
+            let nota_03=parseFloat(document.getElementById('nota_03').value);
+    
+            let soma=nota_01+nota_02+nota_03
+            console.log(soma)
+            let media=soma/3;
+            console.log(media);
+    
+            if(media>=8) alert("Aprovado com louvor");
+            else if(media>=6) alert("Aprovado");
+            else alert("Reprovado");
+        }
+    </script>
+</body>
+
+</html>

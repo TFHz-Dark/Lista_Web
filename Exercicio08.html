@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+<body>
+    <p>Informe os numeros do vetor:</p>
+    <label for="vetor">Vetor:</label>
+    <input type="text" id="vetor" name="vetor" placeholder=":)" disabled="disabled"/>
+    <label for="numero">Numero:</label>
+    <input type="number" id="numero" name="numero">
+    <button onclick="adicionar()" type="button">Adicionar ao vetor</button>
+    <button onclick="maior()" type="button">Maior numero do vetor</button>
+
+    <br>
+    <br>
+    <a href="Exercicio07.html"><button>Anterior</button></a>
+    <a href="Exercicio09.html"><button>Proximo</button></a>
+    
+    <script>
+        var vetor=[];
+        function adicionar(){
+
+            vetor.push(parseFloat(document.getElementById('numero').value));
+            document.getElementById('vetor').value=null;
+            
+            for(let i=0;i<vetor.length;i++){
+                document.getElementById('vetor').value+= vetor[i];
+                document.getElementById('vetor').value+= " ";
+            }
+        }
+        function maior(){
+            let maior=-10000;
+            for(let i=0;i<vetor.length;i++){
+                if(vetor[i]>maior) maior=vetor[i];
+            }
+            alert('Maior numero '+maior);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    <label for="numero_01">Numero 01:</label>
+    <input type="number" id="numero_01" name="numero_01">
+
+    <label for="numero_02">Numero 02:</label>
+    <input type="number" id="numero_02" name="numero_02">
+
+    <button onclick="rodar()" type="button">Enviar</button>
+    
+    <br>
+    <br>
+    <a href="Exercicio02.html"><button>Proximo</button></a>
+
+    <script>
+        function rodar(){
+            let numero_01=parseFloat(document.getElementById('numero_01').value);
+            let numero_02=parseFloat(document.getElementById('numero_02').value);
+
+            if(numero_01>numero_02) alert("Numero 01 eh maior");
+            else if(numero_02>numero_01) alert("Numero 02 eh maior");
+            else alert("Os numeros sao iguais");
+        }
+    </script>
+
+</body>
+</html>

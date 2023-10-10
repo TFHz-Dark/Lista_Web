@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    <label for="numero">Informe um numero:</label>
+    <br>
+    <input type="number" name="numero" id="numero"/>
+    <button type="button" onclick="fatorial()">Fatorar</button>
+    <br>
+    <br>
+    <a href="Exercicio05.html"><button>Anterior</button></a>
+    <a href="Exercicio07.html"><button>Proximo</button></a>
+
+    <script>
+        function fatorial(){
+            let fat=1;
+            let num=parseFloat(document.getElementById('numero').value)
+
+            for(let i=num;i>1;i--){  
+                 fat=fat*i; 
+            }
+            alert(fat);            
+        }
+    </script>
+</body>
+</html>

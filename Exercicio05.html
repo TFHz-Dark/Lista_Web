@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+<body>
+    <p>Informe as suas matrizes</p>
+    <div>
+        <label for="matriz_A.1">Matriz A:</label>
+        <br>
+        <input type="text" name="matriz_A" id="matriz_A.1" disabled="disabled"/>
+        <br>
+        <input type="text" name="matriz_A" id="matriz_A.2" disabled="disabled"/>
+        <br>
+        <input type="text" name="matriz_A" id="matriz_A.3" disabled="disabled"/>
+    </div>
+    <br>
+    <div>
+        <label for="matriz_B.1">Matriz B:</label>
+        <br>
+        <input type="text" name="matriz_B" id="matriz_B.1" disabled="disabled"/>
+        <br>
+        <input type="text" name="matriz_B" id="matriz_B.2" disabled="disabled"/>
+        <br>
+        <input type="text" name="matriz_B" id="matriz_B.3" disabled="disabled"/>
+    </div>
+    <br>
+    <div>
+        <label for="matriz_Soma">Matriz A+B:</label>
+        <br>
+        <input type="text" name="matriz_Soma" id="matriz_Soma.1" disabled="disabled"/>
+        <br>
+        <input type="text" name="matriz_Soma" id="matriz_Soma.2" disabled="disabled"/>
+        <br>
+        <input type="text" name="matriz_Soma" id="matriz_Soma.3" disabled="disabled"/>
+    </div>
+    <br>
+    <div>
+        <label for="numero">Informe o numero que deseja adicionar a sua matriz:</label>
+        <br>
+        <input type="number" id="numero" name="numero"/>
+        <button onclick="adicionar()" type="button">adicionar numero</button>
+        <br>
+        <button type="button" onclick="somar()">Somar matrizes</button>
+    </div>
+    <br>
+    <br>
+    <a href="Exercicio04.html"><button>Anterior</button></a>
+    <a href="Exercicio06.html"><button>Proximo</button></a>
+
+    <script>
+
+        var cont=0;
+        var cont2=0;
+        var matriz_A=[];
+        var matriz_B=[];
+        var matriz_soma=[];
+        var vetor=[];
+
+        function adicionar(){
+            if(cont2==0){
+                if(cont<3){
+                    vetor.push(parseFloat(document.getElementById('numero').value))
+                }
+                document.getElementById('matriz_A.1').value=null;
+            
+                for(let i=0;i<vetor.length;i++){
+                    document.getElementById('matriz_A.1').value+= vetor[i];
+                    document.getElementById('matriz_A.1').value+= " ";
+                }
+                cont++;
+                if(cont==3){
+                    cont2++;
+                    matriz_A.push(vetor);
+                    vetor=[];
+                }
+            }
+            else if(cont2==1){
+                cont++;
+                if(cont>3){
+                    vetor.push(parseFloat(document.getElementById('numero').value))
+                    
+                }
+                document.getElementById('matriz_A.2').value=null;
+            
+                for(let i=0;i<vetor.length;i++){
+                    document.getElementById('matriz_A.2').value+= vetor[i];
+                    document.getElementById('matriz_A.2').value+= " ";
+                }
+                
+                if(cont==6){
+                    cont2++;
+                    matriz_A.push(vetor);
+                    vetor=[];
+                }
+            }
+            else if(cont2==2){
+                cont++;
+                if(cont>6){
+                    vetor.push(parseFloat(document.getElementById('numero').value))
+                    
+                }
+                document.getElementById('matriz_A.3').value=null;
+            
+                for(let i=0;i<vetor.length;i++){
+                    document.getElementById('matriz_A.3').value+= vetor[i];
+                    document.getElementById('matriz_A.3').value+= " ";
+                }
+                
+                if(cont==9){
+                    cont2++;
+                    matriz_A.push(vetor);
+                    vetor=[];
+                }
+            }
+            // Matriz B
+            else if(cont2==3){
+                cont++;
+                if(cont>9){
+                    vetor.push(parseFloat(document.getElementById('numero').value))
+                    
+                }
+                document.getElementById('matriz_B.1').value=null;
+            
+                for(let i=0;i<vetor.length;i++){
+                    document.getElementById('matriz_B.1').value+= vetor[i];
+                    document.getElementById('matriz_B.1').value+= " ";
+                }
+                
+                if(cont==12){
+                    cont2++;
+                    matriz_B.push(vetor);
+                    vetor=[];
+                }
+            }
+            else if(cont2==4){
+                cont++;
+                if(cont>12){
+                    vetor.push(parseFloat(document.getElementById('numero').value))
+                    
+                }
+                document.getElementById('matriz_B.2').value=null;
+            
+                for(let i=0;i<vetor.length;i++){
+                    document.getElementById('matriz_B.2').value+= vetor[i];
+                    document.getElementById('matriz_B.2').value+= " ";
+                }
+                
+                if(cont==15){
+                    cont2++;
+                    matriz_B.push(vetor);
+                    vetor=[];
+                }
+            }
+            else if(cont2==5){
+                cont++;
+                if(cont>15){
+                    vetor.push(parseFloat(document.getElementById('numero').value))
+                    
+                }
+                document.getElementById('matriz_B.3').value=null;
+            
+                for(let i=0;i<vetor.length;i++){
+                    document.getElementById('matriz_B.3').value+= vetor[i];
+                    document.getElementById('matriz_B.3').value+= " ";
+                }
+                
+                if(cont==18){
+                    cont2++;
+                    matriz_B.push(vetor);
+                    vetor=[];
+                }
+            }
+        }
+
+        function somar(){
+            for(let i=0;i<3;i++){
+                for(let j=0;j<3;j++){
+                    vetor[j]=matriz_A[i][j]+matriz_B[i][j]
+                }
+                matriz_soma.push(vetor)
+                
+                if(i==0){
+                    document.getElementById('matriz_Soma.1').value=null;
+
+                    for(let g=0;g<vetor.length;g++){
+                        document.getElementById('matriz_Soma.1').value+= vetor[g];
+                        document.getElementById('matriz_Soma.1').value+= " ";
+                    }
+                }
+                else if(i==1){
+                    document.getElementById('matriz_Soma.2').value=null;
+
+                    for(let g=0;g<vetor.length;g++){
+                        document.getElementById('matriz_Soma.2').value+= vetor[g];
+                        document.getElementById('matriz_Soma.2').value+= " ";
+                    }
+                }
+                else{
+                    document.getElementById('matriz_Soma.3').value=null;
+
+                    for(let g=0;g<vetor.length;g++){
+                        document.getElementById('matriz_Soma.3').value+= vetor[g];
+                        document.getElementById('matriz_Soma.3').value+= " ";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

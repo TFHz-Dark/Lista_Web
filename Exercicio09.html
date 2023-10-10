@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+<body>
+    <p>Informe a sua matriz</p>
+    <div>
+        <label for="matriz.1">Matriz A:</label>
+        <br>
+        <input type="text" name="matriz" id="matriz.1" disabled="disabled"/>
+        <br>
+        <input type="text" name="matriz" id="matriz.2" disabled="disabled"/>
+        <br>
+        <input type="text" name="matriz" id="matriz.3" disabled="disabled"/>
+    </div>
+    <br>
+    <div>
+        <label for="numero">Informe o numero que deseja adicionar a sua matriz:</label>
+        <br>
+        <input type="number" id="numero" name="numero"/>
+        <button onclick="adicionar()" type="button">adicionar numero</button>
+        <br>
+        <button type="button" onclick="media()">Media dos elementos</button>
+    </div>
+
+    <script>
+        var cont=0;
+        var cont2=0;
+        var matriz=[];
+        var vetor=[];
+
+        function adicionar(){
+            if(cont2==0){
+                if(cont<3){
+                    vetor.push(parseFloat(document.getElementById('numero').value))
+                }
+                document.getElementById('matriz.1').value=null;
+            
+                for(let i=0;i<vetor.length;i++){
+                    document.getElementById('matriz.1').value+= vetor[i];
+                    document.getElementById('matriz.1').value+= " ";
+                }
+                cont++;
+                if(cont==3){
+                    cont2++;
+                    matriz.push(vetor);
+                    vetor=[];
+                }
+            }
+            else if(cont2==1){
+                cont++;
+                if(cont>3){
+                    vetor.push(parseFloat(document.getElementById('numero').value))
+                    
+                }
+                document.getElementById('matriz.2').value=null;
+            
+                for(let i=0;i<vetor.length;i++){
+                    document.getElementById('matriz.2').value+= vetor[i];
+                    document.getElementById('matriz.2').value+= " ";
+                }
+                
+                if(cont==6){
+                    cont2++;
+                    matriz.push(vetor);
+                    vetor=[];
+                }
+            }
+            else if(cont2==2){
+                cont++;
+                if(cont>6){
+                    vetor.push(parseFloat(document.getElementById('numero').value))
+                    
+                }
+                document.getElementById('matriz.3').value=null;
+            
+                for(let i=0;i<vetor.length;i++){
+                    document.getElementById('matriz.3').value+= vetor[i];
+                    document.getElementById('matriz.3').value+= " ";
+                }
+                
+                if(cont==9){
+                    cont2++;
+                    matriz.push(vetor);
+                    vetor=[];
+                }
+            }
+        }
+
+        function media(){
+            let soma=0;
+            
+            for(let i=0;i<3;i++){
+                for(let j=0;j<3;j++){
+                    soma=soma+matriz[i][j]
+                }
+            }
+            alert('Media dos elementos '+soma/9)
+        }
+    </script>
+</body>
+</html>

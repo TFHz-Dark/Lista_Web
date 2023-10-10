@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    <p>Informe uma letra:</p>
+    <input type="text" id="letra" name="letra"/>
+    <button onclick="rodar()" type="button">Enviar</button>
+
+    <br>
+    <br>
+    <a href="Exercicio03.html"><button>Anterior</button></a>
+    <a href="Exercicio05.html"><button>Proximo</button></a>
+    
+    <script>
+        function rodar(){
+            let letra=document.getElementById('letra').value;
+            
+            if(letra==='a') alert('A');
+            else if(letra==='b')alert('B');
+            else alert('Outra Letra');
+        }
+    </script>
+</body>
+</html>
